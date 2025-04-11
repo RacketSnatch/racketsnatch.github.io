@@ -56,28 +56,53 @@ const RightNavButton = styled(Button)(({ theme }) => ({
 }));
 
 const Navbar = () => {
-  const navItems = ['Abstract', 'Example', 'Abstract', 'Abstract', 'Abstract'];
+  const navItems = ['Abstract', 'Demo Application', 'Demo', 'Model', 'Reference'];
+  
+  // 处理滚动到指定区域的函数
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      // 滚动到元素位置，并居中显示
+      section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
+  // 将导航项与对应的区域ID映射
+  const getIdFromNavItem = (item) => {
+    return item.toLowerCase().replace(/\s+/g, '-');
+  };
 
   return (
     <TransparentAppBar>
       <Toolbar sx={{ justifyContent: 'center', padding: '30px 0', top: '70%', marginTop: '10px' }}>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           {navItems.map((item, index) => {
+            const sectionId = getIdFromNavItem(item);
+            
             if (index === 0) {
               return (
-                <LeftNavButton key={index}>
+                <LeftNavButton 
+                  key={index} 
+                  onClick={() => scrollToSection(sectionId)}
+                >
                   {item}
                 </LeftNavButton>
               );
             } else if (index === navItems.length - 1) {
               return (
-                <RightNavButton key={index}>
+                <RightNavButton 
+                  key={index} 
+                  onClick={() => scrollToSection(sectionId)}
+                >
                   {item}
                 </RightNavButton>
               );
             } else {
               return (
-                <MiddleNavButton key={index}>
+                <MiddleNavButton 
+                  key={index} 
+                  onClick={() => scrollToSection(sectionId)}
+                >
                   {item}
                 </MiddleNavButton>
               );

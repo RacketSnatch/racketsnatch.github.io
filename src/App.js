@@ -1,9 +1,14 @@
 import React from 'react';
 import './App.css';
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { CssBaseline, ThemeProvider, createTheme, Box } from '@mui/material';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
-import Content from './components/Content';
+import Abstract from './components/Abstract';
+import Demo from './components/Demo';
+import DemoApplication from './components/DemoApplication';
+import Model from './components/Model';
+import Reference from './components/Reference';
+import ContentContainer from './components/ContentContainer';
 import ScrollToTop from './components/ScrollToTop';
 
 // 使用在线占位符图片
@@ -68,7 +73,23 @@ function App() {
         <Header backgroundImage={tableBackground}>
           <Navbar />
         </Header>
-        <Content />
+        <ContentContainer>
+          <Box id="abstract" sx={{ mb: '100px' }}>
+            <Abstract />
+          </Box>
+          <Box id="demo-application" sx={{ mb: '100px' }}>
+            <DemoApplication />
+          </Box>
+          <Box id="demo" sx={{ mb: '100px' }}>
+            <Demo />
+          </Box>
+          <Box id="model" sx={{ mb: '100px' }}>
+            <Model />
+          </Box>
+          <Box id="reference">
+            <Reference />
+          </Box>
+        </ContentContainer>
       </div>
     </ThemeProvider>
   );
