@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Typography, Grid, Box, Dialog, DialogContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import pipeline from '../assets/pipeline.jpg';
-import placeholderVideo from '../assets/placeholder.mp4';
+import placeholderVideo from '../assets/original_wp.mp4';
 
 // 自定义内容标题
 const ContentTitle = styled(Typography)(({ theme }) => ({

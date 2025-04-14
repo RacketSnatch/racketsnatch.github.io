@@ -10,9 +10,10 @@ import Model from './components/Model';
 import Reference from './components/Reference';
 import ContentContainer from './components/ContentContainer';
 import ScrollToTop from './components/ScrollToTop';
+import backgroundImage from './assets/background_picture.jpg';
 
 // 使用在线占位符图片
-const tableBackground = 'https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80';
+const tableBackground = backgroundImage;
 
 // 创建主题
 const theme = createTheme({
@@ -83,9 +84,9 @@ function App() {
           <Box id="demo" sx={{ mb: '100px' }}>
             <Demo />
           </Box>
-          <Box id="model" sx={{ mb: '100px' }}>
+          {/* <Box id="model" sx={{ mb: '100px' }}>
             <Model />
-          </Box>
+          </Box> */}
           <Box id="reference">
             <Reference />
           </Box>
