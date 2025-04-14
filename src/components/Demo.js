@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Typography, Grid, Box, Dialog, DialogContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import caseVideo from '../assets/case_video.jpg';
 import st from '../assets/st.png';
 import wp from '../assets/wp.png';
 import bp from '../assets/bp.png';
-import hp from '../assets/hp.jpg';
+import hp from '../assets/hp.png';
 import st_original from '../assets/original_st.mp4';
 import wp_original from '../assets/original_wp.mp4';
 import bp_original from '../assets/original_bp.mp4';
@@ -15,6 +14,12 @@ import st_generated from '../assets/generated_st.mp4';
 import wp_generated from '../assets/generated_wp.mp4';
 import bp_generated from '../assets/generated_bp.mp4';
 import hp_generated from '../assets/generated_hp.mp4';
+
+import original_0 from '../assets/original_0.mp4';
+import choice_01 from '../assets/choice01.png';
+import choice_02 from '../assets/choice02.png';
+import generated_01 from '../assets/generated_01.mp4';
+import generated_02 from '../assets/generated_02.mp4';
 
 // 自定义内容标题
 const ContentTitle = styled(Typography)(({ theme }) => ({
@@ -115,11 +120,6 @@ const Demo = () => {
       This section shows specific use cases of this system in several games. Each row from left to right shows the original video of the players losing points, the key frames users making choices, and the simulated video generated based on the user's selection.
       </ContentText>
       
-      {/* 案例视频图片 */}
-      <Box sx={{ width: '100%', mb: 4, display: 'flex', justifyContent: 'center' }}>
-        <StyledImage src={caseVideo} alt="Case Video Demonstration" />
-      </Box>
-      
       {/* 9个视频占位符的网格布局 */}
       <Box sx={{ width: '90%', margin: '0 auto', mb: 6 }}>
         {/* 列标题 */}
@@ -144,25 +144,6 @@ const Demo = () => {
         {/* 第一行 */}
         <Grid container spacing={3} sx={{ mb: 4 }}>
           <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(st_original)}>
-              <VideoPreview src={st_original} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-          <Grid item xs={4}>
-            <Box component="img" src={st} alt="Choice 1" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
-          </Grid>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(st_generated)}>
-              <VideoPreview src={st_generated} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-        </Grid>
-        
-        {/* 第二行 */}
-        <Grid container spacing={3} sx={{ mb: 4 }}>
-          <Grid item xs={4}>
             <VideoThumbnail onClick={() => handleOpenVideo(wp_original)}>
               <VideoPreview src={wp_original} muted preload="metadata" />
               <PlayIcon />
@@ -178,27 +159,8 @@ const Demo = () => {
             </VideoThumbnail>
           </Grid>
         </Grid>
-        
-        {/* 第三行 */}
-        <Grid container spacing={3}>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(bp_original)}>
-              <VideoPreview src={bp_original} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-          <Grid item xs={4}>
-            <Box component="img" src={bp} alt="Choice 3" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
-          </Grid>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(bp_generated)}>
-              <VideoPreview src={bp_generated} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-        </Grid>
 
-        {/* 第四行 */}
+        {/* 第二行 */}
         <Grid container spacing={3}>
           <Grid item xs={4}>
             <VideoThumbnail onClick={() => handleOpenVideo(hp_original)}>
@@ -216,7 +178,86 @@ const Demo = () => {
             </VideoThumbnail>
           </Grid>
         </Grid>
-      </Box>
+      
+
+        {/* 第三行 */}
+        <Grid container spacing={3} sx={{ mb: 4 }}>
+          <Grid item xs={4}>
+            <VideoThumbnail onClick={() => handleOpenVideo(st_original)}>
+              <VideoPreview src={st_original} muted preload="metadata" />
+              <PlayIcon />
+            </VideoThumbnail>
+          </Grid>
+          <Grid item xs={4}>
+            <Box component="img" src={st} alt="Choice 1" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+          </Grid>
+          <Grid item xs={4}>
+            <VideoThumbnail onClick={() => handleOpenVideo(st_generated)}>
+              <VideoPreview src={st_generated} muted preload="metadata" />
+              <PlayIcon />
+            </VideoThumbnail>
+          </Grid>
+        </Grid>
+        
+        
+        
+        {/* 第四行 */}
+        <Grid container spacing={3} sx={{ mb: 4 }}>
+          <Grid item xs={4}>
+            <VideoThumbnail onClick={() => handleOpenVideo(bp_original)}>
+              <VideoPreview src={bp_original} muted preload="metadata" />
+              <PlayIcon />
+            </VideoThumbnail>
+          </Grid>
+          <Grid item xs={4}>
+            <Box component="img" src={bp} alt="Choice 3" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+          </Grid>
+          <Grid item xs={4}>
+            <VideoThumbnail onClick={() => handleOpenVideo(bp_generated)}>
+              <VideoPreview src={bp_generated} muted preload="metadata" />
+              <PlayIcon />
+            </VideoThumbnail>
+          </Grid>
+        </Grid>
+
+        {/* 第五行 */}
+        <Grid container spacing={3} sx={{ mb: 4 }}>
+          <Grid item xs={4}>
+            <VideoThumbnail onClick={() => handleOpenVideo(original_0)}>
+              <VideoPreview src={original_0} muted preload="metadata" />
+              <PlayIcon />
+            </VideoThumbnail>
+          </Grid>
+          <Grid item xs={4}>
+            <Box component="img" src={choice_01} alt="Choice 1" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+          </Grid>
+          <Grid item xs={4}>
+            <VideoThumbnail onClick={() => handleOpenVideo(generated_01)}>
+              <VideoPreview src={generated_01} muted preload="metadata" />
+              <PlayIcon />
+            </VideoThumbnail>
+          </Grid>
+        </Grid>
+
+        {/* 第六行 */}
+        <Grid container spacing={3} sx={{ mb: 4 }}>
+          <Grid item xs={4}>
+            <VideoThumbnail onClick={() => handleOpenVideo(original_0)}>
+              <VideoPreview src={original_0} muted preload="metadata" />
+              <PlayIcon />
+            </VideoThumbnail>
+          </Grid>
+          <Grid item xs={4}>
+            <Box component="img" src={choice_02} alt="Choice 2" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+          </Grid>
+          <Grid item xs={4}>
+            <VideoThumbnail onClick={() => handleOpenVideo(generated_02)}>
+              <VideoPreview src={generated_02} muted preload="metadata" />
+              <PlayIcon />
+            </VideoThumbnail>
+          </Grid>
+        </Grid>
+      </Box> 
       
       {/* 视频播放弹窗 */}
       <Dialog

@@ -6,8 +6,8 @@ import Header from './components/Header';
 import Abstract from './components/Abstract';
 import Demo from './components/Demo';
 import DemoApplication from './components/DemoApplication';
-import Model from './components/Model';
 import Reference from './components/Reference';
+import UserSelection from './components/UserSelection';
 import ContentContainer from './components/ContentContainer';
 import ScrollToTop from './components/ScrollToTop';
 import backgroundImage from './assets/background_picture.jpg';
@@ -80,6 +80,9 @@ function App() {
           </Box>
           <Box id="demo-application" sx={{ mb: '100px' }}>
             <DemoApplication />
+          </Box>
+          <Box id="user-selection" sx={{ mb: '100px' }}>
+            <UserSelection />
           </Box>
           <Box id="demo" sx={{ mb: '100px' }}>
             <Demo />
