@@ -49,6 +49,7 @@ const VideoThumbnail = styled(Box)(({ theme }) => ({
   transition: 'transform 0.3s ease',
   overflow: 'hidden',
   borderRadius: '4px',
+  backgroundColor: '#000',
   '&:hover': {
     transform: 'scale(1.05)',
   },
@@ -95,6 +96,17 @@ const StyledImage = styled('img')(({ theme }) => ({
   margin: '0 auto 30px auto',
 }));
 
+// 注解文字样式
+const AnnotationText = styled(Typography)(({ theme }) => ({
+  color: '#DAFBDE',
+  fontFamily: 'Michroma, sans-serif',
+  fontSize: '0.8rem',
+  textAlign: 'left',
+  marginTop: '-8px',
+  marginBottom: '24px',
+  opacity: 0.9,
+}));
+
 const Demo = () => {
   // 控制视频弹窗的状态
   const [open, setOpen] = useState(false);
@@ -120,143 +132,191 @@ const Demo = () => {
       This section shows specific use cases of this system in several games. Each row from left to right shows the original video of the players losing points, the key frames users making choices, and the simulated video generated based on the user's selection.
       </ContentText>
       
-      {/* 9个视频占位符的网格布局 */}
       <Box sx={{ width: '90%', margin: '0 auto', mb: 6 }}>
-        {/* 列标题 */}
-        <Grid container spacing={23} sx={{ mb: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Grid item xs={4} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif' }}>
-              Original Video
-            </Typography>
+        {/* Case 1 */}
+        <Box sx={{ mb: 10 }}>
+          {/* Original Clip Section */}
+          <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif', mb: 2, textAlign: 'left' }}>
+            Original Clip 1
+          </Typography>
+          <Grid container sx={{ mb: 4 }}>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(wp_original)}>
+                <VideoPreview src={wp_original} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-          <Grid item xs={4} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif' }}>
-              User Choice
-            </Typography>
-          </Grid>
-          <Grid item xs={4} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif' }}>
-              Generated Video
-            </Typography>
-          </Grid>
-        </Grid>
 
-        {/* 第一行 */}
-        <Grid container spacing={3} sx={{ mb: 4 }}>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(wp_original)}>
-              <VideoPreview src={wp_original} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
+          {/* Simulations Section */}
+          <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif', mb: 2, textAlign: 'left' }}>
+            Simulations for Demo 1
+          </Typography>
+          {/* Pair 1 */}
+          <Grid container spacing={3} sx={{ mb: 2 }}>
+            <Grid item xs={6}>
+              <Box component="img" src={wp} alt="Choice 1" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+            </Grid>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(wp_generated)}>
+                <VideoPreview src={wp_generated} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Box component="img" src={wp} alt="Choice 2" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
-          </Grid>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(wp_generated)}>
-              <VideoPreview src={wp_generated} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-        </Grid>
+          <AnnotationText>Adjust the waiting position to the right.</AnnotationText>
+        </Box>
 
-        {/* 第二行 */}
-        <Grid container spacing={3}>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(hp_original)}>
-              <VideoPreview src={hp_original} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
+        {/* Case 2 */}
+        <Box sx={{ mb: 6 }}>
+          {/* Original Clip Section */}
+          <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif', mb: 2, textAlign: 'left' }}>
+            Original Clip 2
+          </Typography>
+          <Grid container sx={{ mb: 4 }}>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(hp_original)}>
+                <VideoPreview src={hp_original} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Box component="img" src={hp} alt="Choice 3" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
-          </Grid>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(hp_generated)}>
-              <VideoPreview src={hp_generated} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-        </Grid>
-      
 
-        {/* 第三行 */}
-        <Grid container spacing={3} sx={{ mb: 4 }}>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(st_original)}>
-              <VideoPreview src={st_original} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
+          {/* Simulations Section */}
+          <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif', mb: 2, textAlign: 'left' }}>
+            Simulations for Demo 2
+          </Typography>
+          {/* Pair 1 */}
+          <Grid container spacing={3} sx={{ mb: 2 }}>
+            <Grid item xs={6}>
+              <Box component="img" src={hp} alt="Choice 1" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+            </Grid>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(hp_generated)}>
+                <VideoPreview src={hp_generated} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Box component="img" src={st} alt="Choice 1" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+          <AnnotationText>Adjust the hitting position to the right.</AnnotationText>
+        </Box>
+
+        {/* Case 3 */}
+        <Box sx={{ mb: 6 }}>
+          {/* Original Clip Section */}
+          <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif', mb: 2, textAlign: 'left' }}>
+            Original Clip 3
+          </Typography>
+          <Grid container sx={{ mb: 4 }}>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(st_original)}>
+                <VideoPreview src={st_original} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(st_generated)}>
-              <VideoPreview src={st_generated} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
+
+          {/* Simulations Section */}
+          <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif', mb: 2, textAlign: 'left' }}>
+            Simulations for Demo 3
+          </Typography>
+          {/* Pair 1 */}
+          <Grid container spacing={3} sx={{ mb: 2 }}>
+            <Grid item xs={6}>
+              <Box component="img" src={st} alt="Choice 1" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+            </Grid>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(st_generated)}>
+                <VideoPreview src={st_generated} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-        </Grid>
+          <AnnotationText>Change the stroke technique from twist to short.</AnnotationText>
+        </Box>
         
         
         
-        {/* 第四行 */}
-        <Grid container spacing={3} sx={{ mb: 4 }}>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(bp_original)}>
-              <VideoPreview src={bp_original} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
+               {/* Case 4 */}
+        <Box sx={{ mb: 6 }}>
+          {/* Original Clip Section */}
+          <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif', mb: 2, textAlign: 'left' }}>
+            Original Clip 4
+          </Typography>
+          <Grid container sx={{ mb: 4 }}>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(bp_original)}>
+                <VideoPreview src={bp_original} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Box component="img" src={bp} alt="Choice 3" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
-          </Grid>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(bp_generated)}>
-              <VideoPreview src={bp_generated} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-        </Grid>
 
-        {/* 第五行 */}
-        <Grid container spacing={3} sx={{ mb: 4 }}>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(original_0)}>
-              <VideoPreview src={original_0} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
+          {/* Simulations Section */}
+          <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif', mb: 2, textAlign: 'left' }}>
+            Simulations for Demo 4
+          </Typography>
+          {/* Pair 1 */}
+          <Grid container spacing={3} sx={{ mb: 2 }}>
+            <Grid item xs={6}>
+              <Box component="img" src={bp} alt="Choice 1" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+            </Grid>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(bp_generated)}>
+                <VideoPreview src={bp_generated} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Box component="img" src={choice_01} alt="Choice 1" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
-          </Grid>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(generated_01)}>
-              <VideoPreview src={generated_01} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-        </Grid>
+          <AnnotationText>Change the ball position from the deep backhand to the deep middle.</AnnotationText>
+        </Box>
 
-        {/* 第六行 */}
-        <Grid container spacing={3} sx={{ mb: 4 }}>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(original_0)}>
-              <VideoPreview src={original_0} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
+        {/* Case 5 */}
+        <Box sx={{ mb: 6 }}>
+          {/* Original Clip Section */}
+          <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif', mb: 2, textAlign: 'left' }}>
+            Original Clip 5
+          </Typography>
+          <Grid container sx={{ mb: 4 }}>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(original_0)}>
+                <VideoPreview src={original_0} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Box component="img" src={choice_02} alt="Choice 2" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+
+          {/* Simulations Section */}
+          <Typography variant="h6" sx={{ color: '#DAFBDE', fontFamily: 'Michroma, sans-serif', mb: 2, textAlign: 'left' }}>
+            Simulations for Demo 5
+          </Typography>
+          {/* Pair 1 */}
+          <Grid container spacing={3} sx={{ mb: 2 }}>
+            <Grid item xs={6}>
+              <Box component="img" src={choice_01} alt="Choice 1" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+            </Grid>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(generated_01)}>
+                <VideoPreview src={generated_01} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={() => handleOpenVideo(generated_02)}>
-              <VideoPreview src={generated_02} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
+          <AnnotationText>Change the ball position from the deep forehand to the deep middle.</AnnotationText>
+          {/* Pair 2 */}
+          <Grid container spacing={3} sx={{ mb: 2 }}>
+            <Grid item xs={6}>
+              <Box component="img" src={choice_02} alt="Choice 2" sx={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '4px' }} />
+            </Grid>
+            <Grid item xs={6}>
+              <VideoThumbnail onClick={() => handleOpenVideo(generated_02)}>
+                <VideoPreview src={generated_02} muted preload="metadata" />
+                <PlayIcon />
+              </VideoThumbnail>
+            </Grid>
           </Grid>
-        </Grid>
+          <AnnotationText>Change the ball position from the deep forehand to the deep backhand.</AnnotationText>
+        </Box>
       </Box> 
       
       {/* 视频播放弹窗 */}
