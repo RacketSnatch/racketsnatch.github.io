@@ -19,7 +19,7 @@ const tableBackground = backgroundImage;
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#609A7A', 
+      main: '#609A7A',
     },
     secondary: {
       main: '#DAFBDE',
@@ -90,6 +90,9 @@ function App() {
           {/* <Box id="model" sx={{ mb: '100px' }}>
             <Model />
           </Box> */}
+          {/*<Box id="reference">*/}
+          {/*  <Reference />*/}
+          {/*</Box>*/}
         </ContentContainer>
       </div>
     </ThemeProvider>
