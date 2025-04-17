@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Typography, Grid, Box, Dialog, DialogContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-import clip1_choice1 from '../assets/clip1/clip1_choice1.png';
-import clip1_generated1 from '../assets/clip1/clip1_generated1.mp4';
 import clip1_origin from '../assets/clip1/clip1_origin.mp4';
+import clip1_choice1 from '../assets/clip1/clip1_choice1.png';
+import clip1_choice2 from '../assets/clip1/clip1_choice2.png';
+import clip1_generated1 from '../assets/clip1/clip1_generated1.mp4';
+import clip1_generated2 from '../assets/clip1/clip1_generated2.mp4';
 
 import clip2_origin from '../assets/clip2/clip2_origin.mp4';
 import clip2_choice1 from '../assets/clip2/clip2_choice1.png';
@@ -181,6 +183,27 @@ const Demo = () => {
               </Grid>
               <Typography variant="caption" sx={{ display: 'block', mt: 1, textAlign:'left'}}>
                 Adjust the hitting position to the forehand.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Grid container spacing={1}>
+                <Grid item xs={6}>
+                  <Box
+                      component="img"
+                      src={clip1_choice2}
+                      alt="Stroke Technique"
+                      sx={{ width: '100%', height: '144px', objectFit: 'cover', borderRadius: '4px' }}
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <VideoThumbnail onClick={() => handleOpenVideo(clip1_generated2)}>
+                    <VideoPreview src={clip1_generated2} muted preload="metadata" />
+                    <PlayIcon />
+                  </VideoThumbnail>
+                </Grid>
+              </Grid>
+              <Typography variant="caption" sx={{ display: 'block', mt: 1, textAlign:'left'}}>
+                Adjust the stroke technique to the twist.
               </Typography>
             </Grid>
           </Grid>
