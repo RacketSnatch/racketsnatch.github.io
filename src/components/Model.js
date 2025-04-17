@@ -97,57 +97,67 @@ const Model = () => {
   return (
     <>
       <ContentTitle variant="h4" component="h2">
-        Model
+        Video-based Match Simulation Pipeline and Code
       </ContentTitle>
       <ContentText>
         Video-based match simulation enhances the prospective understanding of strategies and decision-making in
         table tennis by presenting realistic simulated videos with players' nuanced actions and complicated match
-        scenarios.
+        scenarios. We proposed the match video generation pipeline, and you can see the details of each step as follows.
       </ContentText>
 
-      {/* 模型架构图片 */}
-      <Box sx={{ width: '100%', mb: 4, display: 'flex', justifyContent: 'center' }}>
-        <StyledImage src={pipeline} alt="Model Pipeline" />
+      {/*数据采集*/}
+      <Box>
+        <ContentTitle variant="h6" component="h2" sx={{textAlign:'left'}}>
+          1. Data collection and processing
+        </ContentTitle>
+        <ContentText>
+          Video-based Match Simulation Pipeline and Code
+        </ContentText>
       </Box>
 
-      {/* 3个视频占位符的网格布局 */}
-      <Box sx={{ width: '90%', margin: '0 auto', mb: 6 }}>
-        <Grid container spacing={3}>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={handleOpenVideo}>
-              <VideoPreview src={placeholderVideo} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={handleOpenVideo}>
-              <VideoPreview src={placeholderVideo} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-          <Grid item xs={4}>
-            <VideoThumbnail onClick={handleOpenVideo}>
-              <VideoPreview src={placeholderVideo} muted preload="metadata" />
-              <PlayIcon />
-            </VideoThumbnail>
-          </Grid>
-        </Grid>
-      </Box>
+      {/*/!* 模型架构图片 *!/*/}
+      {/*<Box sx={{ width: '100%', mb: 4, display: 'flex', justifyContent: 'center' }}>*/}
+      {/*  <StyledImage src={pipeline} alt="Model Pipeline" />*/}
+      {/*</Box>*/}
 
-      {/* 视频播放弹窗 */}
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        maxWidth="md"
-        fullWidth
-      >
-        <DialogContent sx={{ p: 0, bgcolor: '#000' }}>
-          <video width="100%" controls autoPlay>
-            <source src={videoSrc} type="video/mp4" />
-            您的浏览器不支持视频标签。
-          </video>
-        </DialogContent>
-      </Dialog>
+      {/*/!* 3个视频占位符的网格布局 *!/*/}
+      {/*<Box sx={{ width: '90%', margin: '0 auto', mb: 6 }}>*/}
+      {/*  <Grid container spacing={3}>*/}
+      {/*    <Grid item xs={4}>*/}
+      {/*      <VideoThumbnail onClick={handleOpenVideo}>*/}
+      {/*        <VideoPreview src={placeholderVideo} muted preload="metadata" />*/}
+      {/*        <PlayIcon />*/}
+      {/*      </VideoThumbnail>*/}
+      {/*    </Grid>*/}
+      {/*    <Grid item xs={4}>*/}
+      {/*      <VideoThumbnail onClick={handleOpenVideo}>*/}
+      {/*        <VideoPreview src={placeholderVideo} muted preload="metadata" />*/}
+      {/*        <PlayIcon />*/}
+      {/*      </VideoThumbnail>*/}
+      {/*    </Grid>*/}
+      {/*    <Grid item xs={4}>*/}
+      {/*      <VideoThumbnail onClick={handleOpenVideo}>*/}
+      {/*        <VideoPreview src={placeholderVideo} muted preload="metadata" />*/}
+      {/*        <PlayIcon />*/}
+      {/*      </VideoThumbnail>*/}
+      {/*    </Grid>*/}
+      {/*  </Grid>*/}
+      {/*</Box>*/}
+
+      {/*/!* 视频播放弹窗 *!/*/}
+      {/*<Dialog*/}
+      {/*  open={open}*/}
+      {/*  onClose={handleClose}*/}
+      {/*  maxWidth="md"*/}
+      {/*  fullWidth*/}
+      {/*>*/}
+      {/*  <DialogContent sx={{ p: 0, bgcolor: '#000' }}>*/}
+      {/*    <video width="100%" controls autoPlay>*/}
+      {/*      <source src={videoSrc} type="video/mp4" />*/}
+      {/*      您的浏览器不支持视频标签。*/}
+      {/*    </video>*/}
+      {/*  </DialogContent>*/}
+      {/*</Dialog>*/}
     </>
   );
 };

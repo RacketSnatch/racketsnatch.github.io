@@ -11,6 +11,7 @@ import UserSelection from './components/UserSelection';
 import ContentContainer from './components/ContentContainer';
 import ScrollToTop from './components/ScrollToTop';
 import backgroundImage from './assets/background_picture.jpg';
+import Model from './components/Model'
 
 // 使用在线占位符图片
 const tableBackground = backgroundImage;
@@ -87,12 +88,12 @@ function App() {
           <Box id="demo" sx={{ mb: '60px' }}>
             <Demo />
           </Box>
-          {/* <Box id="model" sx={{ mb: '100px' }}>
+          <Box id="model" sx={{ mb: '60px' }}>
             <Model />
-          </Box> */}
-          {/*<Box id="reference">*/}
-          {/*  <Reference />*/}
-          {/*</Box>*/}
+          </Box>
+          <Box id="reference">
+            <Reference />
+          </Box>
         </ContentContainer>
       </div>
     </ThemeProvider>
