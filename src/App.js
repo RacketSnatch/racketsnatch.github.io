@@ -75,16 +75,16 @@ function App() {
           <Navbar />
         </Header>
         <ContentContainer>
-          <Box id="abstract" sx={{ mb: '100px' }}>
+          <Box id="abstract" sx={{ mb: '60px' }}>
             <Abstract />
           </Box>
-          <Box id="demo-application" sx={{ mb: '100px' }}>
+          <Box id="demo-application" sx={{ mb: '60px' }}>
             <DemoApplication />
           </Box>
-          <Box id="user-selection" sx={{ mb: '100px' }}>
+          <Box id="user-selection" sx={{ mb: '60px' }}>
             <UserSelection />
           </Box>
-          <Box id="demo" sx={{ mb: '100px' }}>
+          <Box id="demo" sx={{ mb: '60px' }}>
             <Demo />
           </Box>
           {/* <Box id="model" sx={{ mb: '100px' }}>

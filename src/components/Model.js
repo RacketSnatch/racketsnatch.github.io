@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Typography, Grid, Box, Dialog, DialogContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import pipeline from '../assets/pipeline.jpg';
-import placeholderVideo from '../assets/original_wp.mp4';
+import placeholderVideo from '../assets/clip2/clip2_origin.mp4';
 
 // 自定义内容标题
 const ContentTitle = styled(Typography)(({ theme }) => ({
@@ -104,12 +104,12 @@ const Model = () => {
         table tennis by presenting realistic simulated videos with players' nuanced actions and complicated match
         scenarios.
       </ContentText>
-      
+
       {/* 模型架构图片 */}
       <Box sx={{ width: '100%', mb: 4, display: 'flex', justifyContent: 'center' }}>
         <StyledImage src={pipeline} alt="Model Pipeline" />
       </Box>
-      
+
       {/* 3个视频占位符的网格布局 */}
       <Box sx={{ width: '90%', margin: '0 auto', mb: 6 }}>
         <Grid container spacing={3}>
@@ -133,7 +133,7 @@ const Model = () => {
           </Grid>
         </Grid>
       </Box>
-      
+
       {/* 视频播放弹窗 */}
       <Dialog
         open={open}
