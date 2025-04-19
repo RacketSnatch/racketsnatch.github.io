@@ -7,7 +7,7 @@ import Abstract from './components/Abstract';
 import Demo from './components/Demo';
 import DemoApplication from './components/DemoApplication';
 import Reference from './components/Reference';
-import UserSelection from './components/UserSelection';
+import VisualDesign from './components/VisualDesign';
 import ContentContainer from './components/ContentContainer';
 import ScrollToTop from './components/ScrollToTop';
 import backgroundImage from './assets/background_picture.jpg';
@@ -83,17 +83,17 @@ function App() {
             <DemoApplication />
           </Box>
           <Box id="user-selection" sx={{ mb: '60px' }}>
-            <UserSelection />
+            <VisualDesign />
           </Box>
           <Box id="demo" sx={{ mb: '60px' }}>
             <Demo />
           </Box>
-          <Box id="model" sx={{ mb: '60px' }}>
-            <Model />
-          </Box>
-          <Box id="reference">
-            <Reference />
-          </Box>
+          {/*<Box id="model" sx={{ mb: '60px' }}>*/}
+          {/*  <Model />*/}
+          {/*</Box>*/}
+          {/*<Box id="reference">*/}
+          {/*  <Reference />*/}
+          {/*</Box>*/}
         </ContentContainer>
       </div>
     </ThemeProvider>

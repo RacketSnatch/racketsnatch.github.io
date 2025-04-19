@@ -56,8 +56,8 @@ const RightNavButton = styled(Button)(({ theme }) => ({
 }));
 
 const Navbar = () => {
-  const navItems = ['Abstract', 'Demo Application', 'User Selection', 'Demo'];
-  
+  const navItems = ['Abstract','Demo Application','Visual Design', 'Demo'];
+
   // 处理滚动到指定区域的函数
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -78,11 +78,11 @@ const Navbar = () => {
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           {navItems.map((item, index) => {
             const sectionId = getIdFromNavItem(item);
-            
+
             if (index === 0) {
               return (
-                <LeftNavButton 
-                  key={index} 
+                <LeftNavButton
+                  key={index}
                   onClick={() => scrollToSection(sectionId)}
                 >
                   {item}
@@ -90,8 +90,8 @@ const Navbar = () => {
               );
             } else if (index === navItems.length - 1) {
               return (
-                <RightNavButton 
-                  key={index} 
+                <RightNavButton
+                  key={index}
                   onClick={() => scrollToSection(sectionId)}
                 >
                   {item}
@@ -99,8 +99,8 @@ const Navbar = () => {
               );
             } else {
               return (
-                <MiddleNavButton 
-                  key={index} 
+                <MiddleNavButton
+                  key={index}
                   onClick={() => scrollToSection(sectionId)}
                 >
                   {item}

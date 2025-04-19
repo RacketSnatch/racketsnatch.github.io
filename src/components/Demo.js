@@ -136,7 +136,7 @@ const Demo = () => {
   return (
     <>
       <ContentTitle variant="h4" component="h2">
-        Demo
+        Demos
       </ContentTitle>
       <ContentText>
       This section shows specific use cases of this system in several games. There will be the original video of the selected clip, and there are also simulations for the selected clip by adjusting different tactical actions in terms of the same or different tactical attributes.

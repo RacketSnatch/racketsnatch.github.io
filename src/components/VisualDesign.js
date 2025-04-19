@@ -38,7 +38,7 @@ const ImageContainer = styled(Box)(({ theme }) => ({
   }
 }));
 
-const UserSelection = () => {
+const VisualDesign = () => {
   const components = [
     {
       image: componentWaitingPosition,
@@ -61,7 +61,7 @@ const UserSelection = () => {
   return (
     <Box sx={{ py: 4, px: 4 }}>
       <ContentTitle variant="h4" component="h2">
-        User Selection
+        Visual Design
       </ContentTitle>
 
       <Grid
@@ -86,10 +86,12 @@ const UserSelection = () => {
       </Grid>
 
       <ContentText>
-      Player position refers to the specific position of the player on the court. It can be divided into two key attributes according to the decision-making stage: a waiting position and a hitting position. Stroke technique consists of a dynamic process of how the player hits the ball, we present each technique with its most representative hitting posture.Ball position is the 9 areas on the opponent's table determined by the player when hitting the ball.
+          We have provided four visualizations for the users to select the simulation action, namely, Waiting Position, Hitting Position, Stroke Technique, and Ball Position.
+          Users can directly select the simulation actions with the corresponding interactive components embedded inside the video, and the system will generate the subsequent simulation videos as shown in the following demos.
+          Specifically, waiting position and hitting position are the player position, which refer to the specific position of the player on the court. Stroke technique consists of a dynamic process of how the player hits the ball, we present each technique with its most representative hitting posture. Ball position is the 9 areas on the opponent's table determined by the player when hitting the ball.
       </ContentText>
     </Box>
   );
 };
 
-export default UserSelection;
+export default VisualDesign;
