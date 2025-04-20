@@ -88,12 +88,12 @@ function App() {
           <Box id="demo" sx={{ mb: '60px' }}>
             <Demo />
           </Box>
-          {/*<Box id="model" sx={{ mb: '60px' }}>*/}
-          {/*  <Model />*/}
-          {/*</Box>*/}
-          {/*<Box id="reference">*/}
-          {/*  <Reference />*/}
-          {/*</Box>*/}
+          <Box id="model" sx={{ mb: '60px' }}>
+            <Model />
+          </Box>
+          <Box id="reference">
+            <Reference />
+          </Box>
         </ContentContainer>
       </div>
     </ThemeProvider>

@@ -56,7 +56,7 @@ const RightNavButton = styled(Button)(({ theme }) => ({
 }));
 
 const Navbar = () => {
-  const navItems = ['Abstract','Demo Application','Visual Design', 'Demo'];
+  const navItems = ['Visual Design', 'Demo','Model','Reference'];
 
   // 处理滚动到指定区域的函数
   const scrollToSection = (sectionId) => {
