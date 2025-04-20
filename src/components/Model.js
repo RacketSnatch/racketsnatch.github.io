@@ -271,6 +271,7 @@ const Model = () => {
             <ContentText>
                 To ensure that the character control model of AnimateAnyone [3] works well, we make some tricks.
                 We insert a T-pose into the n frames before each skeleton animation which could map the posture of the character in the sprite image, and continue to insert frames between each successive frame after the interpolation to make the animation more continuous.
+                However, we will only extract the frame that match specific frame orders for integration into the simulation video.
                 With the combination of other elements in the match scenario, we can get the final complete video for the simulated rally as shown in the demos.
             </ContentText>
         </Box>
